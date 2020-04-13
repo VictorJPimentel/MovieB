@@ -4,15 +4,17 @@
     <p>The platform to help you plan your next movie adventure. Let us know how that adventure went. This is a ramdom text to perfectly fit the slogan</p>
  </div>
   <div class="container-login">
-    <form action="/action_page.php">
+    <form action="includes/signup.inc.php" method="post">
         <div class="col">
           <span class="register-letter">Email</span>
-          <input type="text" name="email"  placeholder="example@example.eg" required>
+          <input type="text" name="mail"  placeholder="example@example.eg" required>
           <span class="register-letter">Username</span>
-          <input type="text" name="username" placeholder="@nickname" required>
+          <input type="text" name="uid" placeholder="Username" required>
           <span class="register-letter">Password</span>
-          <input type="password" name="password" placeholder="*********" required>
-          <input type="submit" value="Sign Up">
+          <input type="password" name="pwd" placeholder="Password" required>
+          <span class="register-letter">Password</span>
+          <input type="password" name="pwd-repeat" placeholder="Repeat Password" required>
+          <input type="submit" name="signup-submit" value="Sign Up">
         </div>
     </form>
   </div>
