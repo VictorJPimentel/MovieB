@@ -2,20 +2,6 @@
 session_start();
  ?>
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-    <title>MovieB or Some Other Title</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
-  </head>
-  <body>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">

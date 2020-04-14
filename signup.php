@@ -7,14 +7,14 @@
     <form action="includes/signup.inc.php" method="post">
         <div class="col">
           <span class="register-letter">Email</span>
-          <input type="text" name="mail"  placeholder="example@example.eg" required>
+          <input class="input-normal" type="text" name="mail"  placeholder="example@example.eg" required>
           <span class="register-letter">Username</span>
-          <input type="text" name="uid" placeholder="Username" required>
+          <input class="input-normal" type="text" name="uid" placeholder="Username" required>
           <span class="register-letter">Password</span>
-          <input type="password" name="pwd" placeholder="Password" required>
+          <input class="input-normal" type="password" name="pwd" placeholder="Password" required>
           <span class="register-letter">Password</span>
-          <input type="password" name="pwd-repeat" placeholder="Repeat Password" required>
-          <input type="submit" name="signup-submit" value="Sign Up">
+          <input class="input-normal" type="password" name="pwd-repeat" placeholder="Repeat Password" required>
+          <input class="input-normal" type="submit" name="signup-submit" value="Sign Up">
         </div>
     </form>
   </div>
