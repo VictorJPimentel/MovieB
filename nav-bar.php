@@ -16,7 +16,7 @@
         echo '<form class="form-inline" action="includes/login.inc.php" method="post">
         <div class="form-group mb-2">
           <label  class="sr-only">Email</label>
-          <input type="text" readonly class="form-control" name="mailuid" placeholder="Username" required">
+          <input type="text" class="form-control" name="mailuid" placeholder="Username" required">
         </div>
         <div class="form-group mx-sm-3 mb-2">
           <label  class="sr-only">Password</label>
@@ -24,16 +24,9 @@
         </div>
         <input type="submit" class="btn  mb-2" name="login-submit" value="Sign In">
         </form>';
-      }
-    ?>
-
-
-
-
-
-                <?php if ( isset($_SESSION['userId']) ) {
+      }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
-                        <span class="sign-list"><span class="navbar-toggler-icon nav-icon user-icon"></span><button  type="submit" name="logout-submit">Logout</button></span>
+                        <span><input  type="submit" class="btn  mb-2" name="logout-submit" value="Logout"></span>
                         </form></li>';  }
                     ?>
             </ul>
