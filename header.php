@@ -7,7 +7,7 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-    <title>repl.it</title>
+    <title>MovieB or Some Other Title</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
