@@ -22,7 +22,9 @@
           <label  class="sr-only">Password</label>
           <input type="password" class="form-control" name="pwd" placeholder="Password" required>
         </div>
+        <div class="form-group mx-sm-3 mb-2">
         <input type="submit" class="btn  mb-2" name="login-submit" value="Sign In">
+        </div>
         </form>';
       }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
