@@ -30,7 +30,7 @@
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
                         <span><input  type="submit" class="btn  mb-2" name="logout-submit" value="Logout"></span>
                         </form></li>';  }
-                    ?>
+      ?>
             </ul>
         </div>
     </div>
