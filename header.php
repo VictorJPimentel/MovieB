@@ -2,21 +2,7 @@
 session_start();
  ?>
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
-  </head>
-  <body>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
+  <title>MovieB Group App</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">

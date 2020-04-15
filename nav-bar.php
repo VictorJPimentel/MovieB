@@ -11,13 +11,26 @@
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">HOT NOW</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Movies</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold"><span class=""></span> Login</a></li>
-                <!-- <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold"><span class="sign-list"><span class="navbar-toggler-icon nav-icon user-icon"></span> Sign Up</span></a></li> -->
-                <?php if ( isset($_SESSION['userId']) ) {
+                    <?php
+      if ( !isset($_SESSION['userId']) ) {
+        echo '<form class="form-inline" action="includes/login.inc.php" method="post">
+        <div class="form-group mb-2">
+          <label  class="sr-only">Email</label>
+          <input type="text" class="form-control" name="mailuid" placeholder="Username" required">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <label  class="sr-only">Password</label>
+          <input type="password" class="form-control" name="pwd" placeholder="Password" required>
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+        <input type="submit" class="btn  mb-2" name="login-submit" value="Sign In">
+        </div>
+        </form>';
+      }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
-                        <span class="sign-list"><span class="navbar-toggler-icon nav-icon user-icon"></span><button  type="submit" name="logout-submit">Logout</button></span>
+                        <span><input  type="submit" class="btn  mb-2" name="logout-submit" value="Logout"></span>
                         </form></li>';  }
-                    ?>
+      ?>
             </ul>
         </div>
     </div>
