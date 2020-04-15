@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container"><a href="#" class="navbar-brand text-uppercase font-weight-bold">MovieB</a>
       <?php if ( isset($_SESSION['userId']) ) {
       echo '<span class="navbar-brand text-uppercase font-weight-bold">Welcome '.$_SESSION['userUid'].'</span>'; }?>
