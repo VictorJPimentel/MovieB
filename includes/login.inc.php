@@ -9,7 +9,7 @@ if ( isset($_POST['login-submit']) ){
     header("Location: ../index.php?error=emptyfields");
     exit();
   }else {
-    $sql = "SELECT * FROM users WHERE uidUsers=? OR emailUsers=?;";
+    $sql = "SELECT * FROM users WHERE username=? OR email=?;";
     $stmt = mysqli_stmt_init($conn);
     if( !mysqli_stmt_prepare($stmt, $sql) ){
 
@@ -18,14 +18,14 @@ if ( isset($_POST['login-submit']) ){
       mysqli_stmt_execute($stmt);
       $result = mysqli_stmt_get_result($stmt);
       if ( $row = mysqli_fetch_assoc($result) ) {
-        $pwdCheck = password_verify($password, $row['pwdusers']);
+        $pwdCheck = password_verify($password, $row['password']);
         if ($pwdCheck == false) {
           header("Location: ../index.php?error=wrongpwdbro");
           exit();
         }else if($pwdCheck == true){
           session_start();
-          $_SESSION['userId'] = $row['idUsers'];
-          $_SESSION['userUid'] = $row['uidUsers'];
+          $_SESSION['userId'] = $row['userId'];
+          $_SESSION['userUid'] = $row['username'];
 
           header("Location: ../index.php?login=success");
           exit();

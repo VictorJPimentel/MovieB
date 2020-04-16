@@ -2,7 +2,7 @@
   $servername = "localhost";
   $dBUsername = "root";
   $dBPassword = "";
-  $DBName = "loginsystem";
+  $DBName = "classic_theatre";
 
   $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $DBName);
 
