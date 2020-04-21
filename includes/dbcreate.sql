@@ -15,10 +15,10 @@ CREATE TABLE `users` (
 
 CREATE TABLE `tickets` (
 	`ticketId` INT NOT NULL AUTO_INCREMENT,
-	`movieName` INT NOT NULL,
+	`movieId` INT NOT NULL,
 	`orderId` INT NOT NULL,
-	`date` DATE NOT NULL,
-	`time` TIME NOT NULL,
+	`movieDate` DATE NOT NULL,
+	`movieTime` TIME NOT NULL,
 	`type` VARCHAR(255) NOT NULL,
 	`price` BOOLEAN NOT NULL,
 	PRIMARY KEY (`ticketId`)
@@ -29,6 +29,11 @@ CREATE TABLE `movies` (
 	`movieName` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`movieId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `movies` VALUES (NULL,'Aladdin');
+INSERT INTO `movies` VALUES (NULL,'Titanic');
+INSERT INTO `movies` VALUES (NULL,'Avatar');
+INSERT INTO `movies` VALUES (NULL,'Shawshank Redemption');
+INSERT INTO `movies` VALUES (NULL,'The Godfather');
 
 CREATE TABLE `orders` (
 	`orderId` INT NOT NULL AUTO_INCREMENT,
@@ -57,7 +62,7 @@ CREATE TABLE `messages` (
 	PRIMARY KEY (`messageId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-ALTER TABLE `tickets` ADD CONSTRAINT `tickets_fk0` FOREIGN KEY (`movieName`) REFERENCES `movies`(`movieId`);
+ALTER TABLE `tickets` ADD CONSTRAINT `tickets_fk0` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
 
 ALTER TABLE `tickets` ADD CONSTRAINT `tickets_fk1` FOREIGN KEY (`orderId`) REFERENCES `orders`(`orderId`);
 

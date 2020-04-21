@@ -19,3 +19,4 @@ session_start();
   <div class="background background-0">
     <div class="background background-1">
     <?php include("nav-bar.php") ?>
+    <?php include("./includes/movie_search.inc.php") ?>
