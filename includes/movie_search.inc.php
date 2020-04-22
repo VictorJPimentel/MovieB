@@ -73,7 +73,7 @@ if (isset($_POST['purchase-submit'])) {
 
     mysqli_stmt_bind_param($stmt, "ssssss", $movieId, $newOrderId, $date, $time, $type, $price );
 
-    for ($i=0; $i < $num_ticks; $i++) {
+    for ($i=1; $i < $num_ticks; $i++) {
       mysqli_stmt_execute($stmt);
     }
     mysqli_stmt_close($stmt);

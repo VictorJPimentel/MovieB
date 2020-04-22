@@ -11,7 +11,7 @@
            <option type="text" value="5">The Godfather</option>
          </select>
          <span class="register-letter">Date</span>
-         <input class="input-normal" type="date" name="date" value="2020-04-16" >
+         <input class="input-normal" type="date" name="date" value="<?php echo date('Y-m-d'); ?>" >
          <span class="register-letter">Time</span>
          <select class="input-normal"  name="time" id="times">
            <option type="time" value="01:00">01:00</option>
