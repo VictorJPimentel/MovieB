@@ -18,23 +18,13 @@ if (isset($_POST['search-submit'])) {
     $result = mysqli_stmt_get_result($stmt);
     $htmlGo ="";
     $numAvaiable =null;
-    if($movieId==1){
-      $movieName="Aladdin";
-    }elseif (movieId==2) {
-      $movieName = "Titanic";
-    }elseif (movieId==3) {
-      $movieName="Avatar";
-    }elseif (movieId==4) {
-      $movieName="Shawshank Redemtion";
-    }elseif (movieId==5) {
-      $movieName="The Godfather";
-    }
-  //  while ( $row = mysqli_fetch_assoc($result) ) {
+    $movieName = pickMovie($movieId);
+    //  while ( $row = mysqli_fetch_assoc($result) ) {
          //echo "<p>". $row["movieName"].' '.$row["date"].' '.$row["time"]."</p>";
         //$htmlGo.="<p>". $row["movieId"].' '.$row["date"].' '.$row["time"]."</p>";
     //   }
-   //header("Location: ticketing.php");
- //exit();
+    //header("Location: ticketing.php");
+    //exit();
     $numAvaiable =  10 - mysqli_num_rows ( $result );
     $conn->close();
    }

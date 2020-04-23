@@ -9,7 +9,7 @@
                 <li class="nav-item active"><a href="./index.php" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
                 <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Ticketing</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Movies</a></li>
+                <li class="nav-item"><a href="./myMovies.php" class="nav-link text-uppercase font-weight-bold">My Movies</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
                     <?php
       if ( !isset($_SESSION['userId']) ) {
