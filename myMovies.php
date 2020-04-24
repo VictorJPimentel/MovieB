@@ -15,7 +15,7 @@ if (isset($_SESSION['userId'])) {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while($row = $result->fetch_assoc()) {
-              echo '<div style="display: flex; justify-content: center;"><div class="container-table"><table class="width:50%;; margin-top: 25px">
+              echo '<div style="display: flex; justify-content: center;"><div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%;; margin-top: 25px">
                   <tr><th class="cell colum1">ticketId</th>
                     <th class="cell colum2">movieId</th>
                     <th class="cell colum3">orderId</th>
