@@ -15,14 +15,14 @@ if (isset($_SESSION['userId'])) {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while($row = $result->fetch_assoc()) {
-              echo '<div style="display: flex; justify-content: center;"><div class="container-table"><table class="width:50%;; margin-top: 25px">
-                  <tr><th class="cell colum1">ticketId</th>
-                    <th class="cell colum2">movieId</th>
-                    <th class="cell colum3">orderId</th>
-                    <th class="cell colum4">movieDate</th>
-                    <th class="cell colum5">movieTime</th>
-                    <th class="cell colum6">type</th>
-                    <th class="cell colum7">price</th>
+              echo '<table style="margin-left: 25%; width:50%; color: white; margin-top: 25px">
+                  <tr><th>ticketId</th>
+                    <th>movieId</th>
+                    <th>orderId</th>
+                    <th>movieDate</th>
+                    <th>movieTime</th>
+                    <th>type</th>
+                    <th>price</th>
                   </tr>';
               $currentOrderId = $row["orderId"];
               $innerSql = "SELECT * FROM tickets WHERE orderId=?";
@@ -38,17 +38,17 @@ if (isset($_SESSION['userId'])) {
                   $movieId=$innerRow["movieId"];
                   $movieName = pickMovie($movieId);
                   echo "<tr>
-                    <td class='cell'>".$innerRow["ticketId"]."</td>
-                    <td class='cell'>".$movieName."</td>
-                    <td class='cell'>".$innerRow["orderId"]."</td>
-                    <td class='cell'>".$innerRow["movieDate"]."</td>
-                    <td class='cell'>".$innerRow["movieTime"]."</td>
-                    <td class='cell'>".$innerRow["type"]."</td>
-                    <td class='cell'>".$innerRow["price"]."</td>
+                    <td>".$innerRow["ticketId"]."</td>
+                    <td>".$movieName."</td>
+                    <td>".$innerRow["orderId"]."</td>
+                    <td>".$innerRow["movieDate"]."</td>
+                    <td>".$innerRow["movieTime"]."</td>
+                    <td>".$innerRow["type"]."</td>
+                    <td>".$innerRow["price"]."</td>
                     <tr>";
                 }
               }
-              echo '</table></div></div>';
+              echo '</table>';
     }
 }
 }
@@ -57,6 +57,8 @@ if (isset($_SESSION['userId'])) {
 
 
     </div>
+    <div class="background background-2"></div>
+    <div class="background background-3"></div>
   <?php include("footer.php") ?>
   </body>
 </html>

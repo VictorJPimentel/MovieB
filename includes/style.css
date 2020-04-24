@@ -1,4 +1,3 @@
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -181,9 +180,6 @@ background-image: url("https://img.icons8.com/cotton/2x/menu.png");
   border-radius: 7px;
 }
 
-
-
-
 /* style inputs and link buttons */
 .input-normal {
   width: 100%;
@@ -259,95 +255,11 @@ height: 25px;}
 }
 
 /*====================
-  My Movies
-====================== */
-
-
-.cell {
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 40px;
-  font-family: sans-serif;
-  font-size: 18px;
-  font-family: font-family: Varela Round;
-  src: url('../fonts/Lato/Lato-Bold.ttf');
-  color: #7b7b7b;
-
-
-}
-
-tr:nth-child(odd) {background: red}
-tr {border-bottom: 1px solid #ccc; }
-
-th {
-  font-size: 20px !important;
-  color: #fff !important;
-  line-height: 1.4;
-  text-transform: uppercase; 
-  background-color: rgb(223, 15, 15);}
-
-
-.colum1 {
-width: 200px;
-height: 50px;
-font-weight: bold;
-;
-}
-.colum2 {
-width: 200px;
-height: 50px;
-}
-.colum3 {
-width: 200px;
-height: 50px;
-}
-.colum4 {
-width: 200px;
-height: 50px;
-}
-.colum5 {
-width: 200px;
-height: 50px;
-}
-.colum6 {
-width: 200px;
-height: 50px;
-}
-.colum7 {
-width: 200px;
-height: 50px;
-}
-
-
-tr:nth-child(even){background-color: #f2f2f2}
-
-
-/* style the table container */
-.container-table {
-  display: flex;
-  float:left;
-  justify-content: center;
-  overflow:auto;
-  margin: auto;
-  margin-top: 50px;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
-}
-
-
-
-
-/*====================
 	Footer
 ====================== */
 
-/* Main Footer footer .main-footer{	padding: 20px 0;	background:rgb(87, 10, 10);}
+/* Main Footer */
+footer .main-footer{	padding: 20px 0;	background:rgb(87, 10, 10);}
 footer ul{	padding-left: 0;	list-style: none;}
 
 /* Copy Right Footer */
