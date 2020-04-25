@@ -29,7 +29,7 @@ background-repeat: round;
 
 
 .background-2 {
-  background-color: rgb(87, 10, 10);
+  background-color: black;
 
 }
 
@@ -198,6 +198,8 @@ background-image: url("https://img.icons8.com/cotton/2x/menu.png");
 
 }
 
+.put-down {margin-top: -50px !important; }
+
 .register-letter {
 
   font-weight: bold;
@@ -242,18 +244,12 @@ input[type=submit]:hover {
 
 /* Login Nav CSS */
 .login-nav-in {
-width: 70px !important;
+  width: 125px !important;
+margin: 5px;
 height: 25px;}
 
 .input-sub {
-  height: 25px;
-  border: none;
-  border-radius: 4px;
-  margin: 5px 0;
-  opacity: 0.85;
-  display: inline-block;
-  font-size: 17px;
-  line-height: 20px;
+  height: 25px;;
 
 }
 
@@ -363,6 +359,41 @@ max-height: 200px;
 .table-wrapper-scroll-y::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+
+/*====================
+	Sigin
+====================== */
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 

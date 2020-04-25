@@ -14,21 +14,13 @@
                     <?php
       if ( !isset($_SESSION['userId']) ) {
         echo '<li class="nav-item"><form class="form-inline" action="includes/login.inc.php" method="post">
-        <div class="form-group mb-2">
-          <label  class="sr-only">Email</label>
           <input type="text" class="form-control login-nav-in" name="mailuid" placeholder="Username" required">
-        </div>
-        <div class="form-group mx-sm-3 mb-2">
-          <label  class="sr-only">Password</label>
           <input type="password" class="form-control login-nav-in" name="pwd" placeholder="Password" required>
-        </div>
-        <div class="form-group mx-sm-3 mb-2">
-        <input type="submit" class="btn  mb-2" name="login-submit" value="Sign In">
-        </div>
+        <input type="submit" class="btn" name="login-submit" value="Sign In">
         </form></li>';
       }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
-                        <span><input  type="submit" class="btn  mb-2" name="logout-submit" value="Logout"></span>
+                        <input type="submit" class="btn" name="login-submit" value="Logout">
                         </form></li>';
       }
       ?>
