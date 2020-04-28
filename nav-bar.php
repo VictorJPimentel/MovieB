@@ -10,7 +10,7 @@
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
                 <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Tickets</a></li>
                 <li class="nav-item"><a href="./myMovies.php" class="nav-link text-uppercase font-weight-bold">My Movies</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+                <li class="nav-item"><a href="./contact.php" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
                     <?php
       if ( !isset($_SESSION['userId']) ) {
         echo '<li class="nav-item"><form class="form-inline" action="includes/login.inc.php" method="post">

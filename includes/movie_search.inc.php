@@ -66,7 +66,7 @@ if (isset($_POST['purchase-submit'])) {
         }
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
-        header("Location: ./ticketing.php?purchase=success");
+        header("Location: ./myMovies.php?purchase=success");
         exit();
       }
   }

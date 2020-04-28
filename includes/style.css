@@ -281,7 +281,7 @@ th {
   font-size: 20px !important;
   color: #fff !important;
   line-height: 1.4;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   background-color: rgb(223, 15, 15);}
 
 
@@ -322,11 +322,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 /* style the table container */
 .container-table {
-  display: flex;
+  display: inline-block;
   float:left;
   justify-content: center;
   overflow:auto;
+  width: 85%;
   margin: auto;
+  margin-left: 7.5%;
   margin-top: 50px;
   background-color: #f2f2f2;
   border-radius: 10px;
@@ -336,6 +338,7 @@ tr:nth-child(even){background-color: #f2f2f2}
   -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 
@@ -351,11 +354,11 @@ max-height: 200px;
 .table-wrapper-scroll-y::-webkit-scrollbar {
   width: 0;
 }
- 
+
 .table-wrapper-scroll-y::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 .table-wrapper-scroll-y::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
@@ -402,7 +405,8 @@ max-height: 200px;
 	Footer
 ====================== */
 /* Main Footer */
-footer .main-footer{  padding: 20px 0;  background:rgb(87, 10, 10);}
+footer .main-footer{  padding: 20px 0;
+   background:rgb(87, 10, 10);}
 
 /* Main Footer footer .main-footer{	padding: 20px 0;	background:rgb(87, 10, 10);}
 footer ul{	padding-left: 0;	list-style: none;}

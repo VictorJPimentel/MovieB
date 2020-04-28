@@ -54,6 +54,10 @@ if (isset($_POST['signup-submit'])) {
 
         mysqli_stmt_bind_param($stmt, "sss", $username, $hashedPwd, $email);
         mysqli_stmt_execute($stmt);
+        $newUserId = $conn->insert_id;
+        session_start();
+        $_SESSION['userId'] = $newUserId;
+        $_SESSION['userUid'] = $username;
         header("Location: ../index.php?signup=success");
         exit();
         }
