@@ -8,10 +8,12 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="./index.php" class="nav-link text-uppercase font-weight-bold">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
+                <?php if ( isset($_SESSION['userId']) ) {
+                  echo'
                 <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Tickets</a></li>
                 <li class="nav-item"><a href="./myMovies.php" class="nav-link text-uppercase font-weight-bold">My Movies</a></li>
-                <li class="nav-item"><a href="./contact.php" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
-                    <?php
+                <li class="nav-item"><a href="./contact.php" class="nav-link text-uppercase font-weight-bold">Contact</a></li>';
+              }
       if ( !isset($_SESSION['userId']) ) {
         echo '<li class="nav-item"><form class="form-inline" action="includes/login.inc.php" method="post">
           <input type="text" class="form-control login-nav-in" name="mailuid" placeholder="Username" required">

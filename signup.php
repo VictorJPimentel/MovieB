@@ -1,7 +1,7 @@
 <div class="container-front">
   <div class="front-text">
     <h1>Book it then review it</h1>
-    <p>The platform to help you plan your next movie adventure. Let us know how that adventure went. This is a ramdom text to perfectly fit the slogan</p>
+    <p>Sign up or sign in to purchase tickets and food, leave reviews or contact us through the site.<br> Just browsing? Click About to learn about our theatre and view the movies we're currently showing.</p>
  </div>
  <?php
  if ( !isset($_SESSION['userId']) ) {
