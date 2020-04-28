@@ -27,13 +27,26 @@ CREATE TABLE `tickets` (
 CREATE TABLE `movies` (
 	`movieId` INT NOT NULL AUTO_INCREMENT,
 	`movieName` VARCHAR(255) NOT NULL,
+    `likes` INT,
+    `dislikes` INT,
 	PRIMARY KEY (`movieId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-INSERT INTO `movies` VALUES (NULL,'Aladdin');
-INSERT INTO `movies` VALUES (NULL,'Titanic');
-INSERT INTO `movies` VALUES (NULL,'Avatar');
-INSERT INTO `movies` VALUES (NULL,'Shawshank Redemption');
-INSERT INTO `movies` VALUES (NULL,'The Godfather');
+
+INSERT INTO `movies` VALUES (NULL,'Aladdin',0,0);
+INSERT INTO `movies` VALUES (NULL,'Titanic',0,0);
+INSERT INTO `movies` VALUES (NULL,'Avatar',0,0);
+INSERT INTO `movies` VALUES (NULL,'Shawshank Redemption',0,0);
+INSERT INTO `movies` VALUES (NULL,'The Godfather',0,0);
+
+CREATE TABLE `reviews` (
+	`reviewId` INT NOT NULL AUTO_INCREMENT,
+    `userId` INT NOT NULL,
+    `movieId` INT NOT NULL,
+	`reviewContent` VARCHAR(255) NOT NULL,
+    `likes` INT,
+    `dislikes` INT,
+	PRIMARY KEY (`reviewId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE `orders` (
 	`orderId` INT NOT NULL AUTO_INCREMENT,
@@ -73,3 +86,9 @@ ALTER TABLE `items` ADD CONSTRAINT `items_fk0` FOREIGN KEY (`orderId`) REFERENCE
 ALTER TABLE `items` ADD CONSTRAINT `items_fk1` FOREIGN KEY (`itemName`) REFERENCES `menu`(`menuId`);
 
 ALTER TABLE `messages` ADD CONSTRAINT `messages_fk0` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
+
+ALTER TABLE `reviews` ADD CONSTRAINT `reviews_fk0` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
+
+ALTER TABLE `reviews` ADD CONSTRAINT `reviews_fk1` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
+
+
