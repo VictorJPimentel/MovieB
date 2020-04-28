@@ -4,7 +4,7 @@ if (isset($_SESSION['userId'])) {
   require './includes/dbh.inc.php';
   $userId= $_SESSION['userId'];
   $movieName="";
-  echo '<h1 style=" text-align: center; color:white; margin-top: 25px;">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
+  echo '<h1 style=" text-align: center; color:white; margin-top: 25px;  margin-bottom: 25px">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
   $sql = "SELECT * FROM orders WHERE userId=?";
   $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt, $sql)){
