@@ -4,7 +4,7 @@ if (isset($_SESSION['userId'])) {
   require './includes/dbh.inc.php';
   $userId= $_SESSION['userId'];
   $movieName="";
-  echo '<h1 style=" text-align: center; color:white; margin-top: 25px;">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
+  echo '<h1 style=" text-align: center; color:white; margin-top: 25px;  margin-bottom: 25px">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
   $sql = "SELECT * FROM orders WHERE userId=?";
   $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -15,14 +15,14 @@ if (isset($_SESSION['userId'])) {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while($row = $result->fetch_assoc()) {
-              echo '<div style="display: flex; justify-content: center;"><div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%;; margin-top: 25px">
-                  <tr><th class="cell colum1">ticketId</th>
-                    <th class="cell colum2">movieId</th>
-                    <th class="cell colum3">orderId</th>
-                    <th class="cell colum4">movieDate</th>
-                    <th class="cell colum5">movieTime</th>
-                    <th class="cell colum6">type</th>
-                    <th class="cell colum7">price</th>
+              echo '<div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%; margin-top: 25px">
+                  <tr><th class="cell colum1">ticket #</th>
+                    <th class="cell colum2">Movie Name</th>
+                    <th class="cell colum3">Order #</th>
+                    <th class="cell colum4">Date</th>
+                    <th class="cell colum5">Time</th>
+                    <th class="cell colum6">Type</th>
+                    <th class="cell colum7">Price</th>
                   </tr>';
               $currentOrderId = $row["orderId"];
               $innerSql = "SELECT * FROM tickets WHERE orderId=?";
@@ -48,7 +48,7 @@ if (isset($_SESSION['userId'])) {
                     <tr>";
                 }
               }
-              echo '</table></div></div>';
+              echo '</table></div>';
     }
 }
 }
@@ -58,5 +58,6 @@ if (isset($_SESSION['userId'])) {
 
     </div>
   <?php include("footer.php") ?>
+  <div>
   </body>
 </html>
