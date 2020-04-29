@@ -23,7 +23,8 @@
       }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
                         <input type="submit" class="btn" name="login-submit" value="Logout">
-                        </form></li>';
+                        </form></li>
+                        <li class="nav-item"><a href="./userprofile.php" class="nav-link text-uppercase font-weight-bold">Profile</a></li>';
       }
       ?>
             </ul>
