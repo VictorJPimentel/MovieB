@@ -1,0 +1,609 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+  background-color: #ddd;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+}
+
+.background-0{
+top:0;
+left:0;
+bottom:0;
+right:0;
+height:100%;
+width:100%;
+position: absolute;
+}
+
+.background-1 {
+  background: lightblue url("https://www.gannett-cdn.com/presto/2019/04/02/PLOU/febba588-ff5b-4277-b600-c4c76252c317-MotleyFool-TMOT-1c387926-06ba00e6.jpg?crop=2094,1185,x0,y0&width=1600&height=800&fit=bounds");
+background-repeat: round;
+}
+
+
+.background-2 {
+  background-color: black;
+
+}
+
+
+.background-3 {
+  background-color: rgb(223, 178, 178);
+
+}
+
+p{
+  color: white;
+}
+
+.nav-icon {
+display: inline-block;
+font-size: inherit;
+text-rendering: auto;
+width: 15px;
+height: 15px;
+}
+
+
+.log-icon {
+background-image: url("https://flaticons.net/icon.php?slug_category=application&slug_icon=login-arrow");
+width: 20px;
+height: 20px;
+
+}
+
+.user-icon {
+background-image: url("https://flaticons.net/icon.php?slug_category=application&slug_icon=user-login");
+
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+.navbar {
+    transition: all 0.4s;
+    position: sticky !important;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #000;
+}
+
+
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+.navbar-toggler {
+  height: 50px;
+  width: 50px;
+}
+
+
+.popcorn-icon {
+background-image: url("https://img.icons8.com/cotton/2x/menu.png");
+
+}
+
+.sign-list {
+
+  border: 1px #fff solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
+
+
+
+/*                   Front CSS                       */
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.container-front {
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+
+}
+
+/*  Front Text */
+.front-text {
+  margin-right: 5%;
+  width: 400px;
+
+}
+
+.front-text h1 {
+ color: white;
+ font-size: 64px;
+ font-weight: bold;
+}
+
+.front-text p {
+ color: white;
+   font-size: 18px;
+}
+
+/* style the login container */
+.container-login {
+  width: 400px;
+  background-color: #f2f2f2;
+  padding: 20px 0 30px 0;
+  border-radius: 7px;
+}
+
+
+
+
+/* style inputs and link buttons */
+.input-normal {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+
+}
+
+.put-down {margin-top: -50px !important; }
+
+.register-letter {
+
+  font-weight: bold;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 20px;
+
+}
+
+
+/* style the submit button */
+input[type=submit] {
+  background-color: rgb(223, 15, 15);
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #000;
+}
+
+.col {
+
+  width: 100%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Two-column layout */
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1000px) {
+.container-login {float: bottom}
+
+
+.background-1 {
+  background-repeat: repeat;
+  transition: width 2s;
+}
+
+}
+
+/* Login Nav CSS */
+.login-nav-in {
+  width: 125px !important;
+margin: 5px;
+height: 25px;}
+
+.input-sub {
+  height: 25px;;
+
+}
+
+.navbarSupportedContent {height: 40px !important}
+
+
+/*====================
+  My Movies
+====================== */
+
+
+.cell {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 40px;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-family: font-family: Varela Round;
+  src: url('../fonts/Lato/Lato-Bold.ttf');
+  color: #7b7b7b;
+
+
+}
+
+tr:nth-child(odd) {background: red}
+tr {border-bottom: 1px solid #ccc; }
+
+th {
+  font-size: 20px !important;
+  color: #fff !important;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: rgb(223, 15, 15);}
+
+
+.colum1 {
+width: 200px;
+height: 50px;
+font-weight: bold;
+;
+}
+.colum2 {
+width: 200px;
+height: 50px;
+}
+.colum3 {
+width: 200px;
+height: 50px;
+}
+.colum4 {
+width: 200px;
+height: 50px;
+}
+.colum5 {
+width: 200px;
+height: 50px;
+}
+.colum6 {
+width: 200px;
+height: 50px;
+}
+.colum7 {
+width: 200px;
+height: 50px;
+}
+#messageId{
+  width: 15%;
+}
+#messageCon{
+  width: 85%;
+}
+
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+
+/* style the table container */
+.container-table {
+  display: inline-block;
+  float:left;
+  justify-content: center;
+  overflow:auto;
+  width: 85%;
+  margin: auto;
+  margin-left: 7.5%;
+  margin-bottom: 50px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.my-custom-scrollbar {
+position: relative;
+overflow: auto;
+}
+.table-wrapper-scroll-y {
+display: block;
+height: auto;
+max-height: 400px;
+}
+.table-wrapper-scroll-y::-webkit-scrollbar {
+  width: 0;
+}
+
+.table-wrapper-scroll-y::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.table-wrapper-scroll-y::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.mymovies {height: 700px; overflow:auto;}
+/*====================
+	Sigin
+====================== */
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+/*====================
+	Profile
+====================== */
+/* User Profile*/
+
+.emp-profile{
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    background: #fff;
+}
+.profile-img{
+    text-align: center;
+}
+.profile-img img{
+    width: 70%;
+    height: 100%;
+    border-radius: 5px !important;
+}
+.profile-img .file {
+    position: relative;
+    overflow: hidden;
+    margin-top: -20%;
+    width: 70%;
+    border: none;
+    border-radius: 0;
+    font-size: 15px;
+    background: #212529b8;
+}
+.profile-img .file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+}
+.profile-head h5{
+    color: #333;
+}
+.profile-head h6{
+    color: red;
+}
+.profile-edit-btn{
+    border: none;
+    border-radius: 1.5rem;
+    width: 70%;
+    padding: 2%;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+}
+.proile-rating{
+    font-size: 12px;
+    color: #818182;
+    margin-top: 5%;
+}
+.proile-rating span{
+    color: #495057;
+    font-size: 15px;
+    font-weight: 600;
+}
+.profile-head .nav-tabs{
+    margin-bottom:5%;
+}
+.profile-head .nav-tabs .nav-link{
+    font-weight:600;
+    border: none;
+}
+.profile-head .nav-tabs .nav-link.active{
+    border: none;
+    border-bottom:2px solid red !important;
+}
+.profile-work{
+    padding: 14%;
+    margin-top: -15%;
+}
+.profile-work p{
+    font-size: 12px;
+    color: #818182;
+    font-weight: 600;
+    margin-top: 10%;
+}
+.profile-work a{
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+    font-size: 14px;
+}
+.profile-work ul{
+    list-style: none;
+}
+.profile-tab label{
+    font-weight: 600;
+}
+.profile-tab p{
+    font-weight: 600;
+    color: red;
+}
+.emp-profile .nav-item a {color: red}
+
+#hprofile {  display: inline-block;
+  float:left;
+  justify-content: center;
+  overflow:auto;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 50px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15); }
+
+  #profile {height: 500px;
+   overflow:auto;}
+
+/*====================
+	Footer
+====================== */
+/* Main Footer */
+footer .main-footer{  padding: 20px 0;
+   background:rgb(87, 10, 10);}
+
+/* Main Footer footer .main-footer{	padding: 20px 0;	background:rgb(87, 10, 10);}
+footer ul{	padding-left: 0;	list-style: none;}
+/* Copy Right Footer */
+.footer-copyright {	background: #fff;	padding: 5px 0;}
+.footer-copyright .logo {    display: inherit;}
+.footer-copyright nav {    float: right;    margin-top: 5px;}
+.footer-copyright nav ul {	list-style: none;	margin: 0;	padding: 0;}
+.footer-copyright nav ul li {	border-left: 1px solid #505050;	display: inline-block;	line-height: 12px;	margin: 0;	padding: 0 8px;}
+.footer-copyright nav ul li a{	color: #969696;}
+.footer-copyright nav ul li:first-child {	border: medium none;	padding-left: 0;}
+.footer-copyright p {	color: #969696;	margin: 2px 0 0;}
+
+/* Footer Top */
+.footer-top{	background: #252525;	padding-bottom: 30px;	margin-bottom: 30px;	border-bottom: 3px solid #222;}
+
+/* Footer transparent */
+footer.transparent .footer-top, footer.transparent .main-footer{	background: transparent;}
+footer.transparent .footer-copyright{	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3) ;}
+
+/* Footer light */
+footer.light .footer-top{	background: #f9f9f9;}
+footer.light .main-footer{	background: #f9f9f9;}
+footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3) ;}
+
+/* Footer 4 */
+.footer- .logo {    display: inline-block;}
+
+/*====================
+	Widgets
+====================== */
+.widget{	padding: 20px;	margin-bottom: 40px;}
+.widget.widget-last{	margin-bottom: 0px;}
+.widget.no-box{	padding: 0;	background-color: transparent;	margin-bottom: 40px;
+	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
+.widget.subscribe p{	margin-bottom: 18px;}
+.widget li a{	color: #ff8d1e;}
+.widget li a:hover{	color: #4b92dc;}
+.widget-title {margin-bottom: 20px;}
+.widget-title span {background: #839FAD none repeat scroll 0 0;display: block; height: 1px;margin-top: 25px;position: relative;width: 20%;}
+.widget-title span::after {background: inherit;content: "";height: inherit;    position: absolute;top: -4px;width: 50%;}
+.widget-title.text-center span,.widget-title.text-center span::after {margin-left: auto;margin-right:auto;left: 0;right: 0;}
+.widget .badge{	float: right;	background: #7f7f7f;}
+
+.typo-light h1,
+.typo-light h2,
+.typo-light h3,
+.typo-light h4,
+.typo-light h5,
+.typo-light h6,
+.typo-light p,
+.typo-light div,
+.typo-light span,
+.typo-light small{	color: #fff;}
+
+ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
+ul.social-footer2 li {display: inline-block;padding: 0;}
+ul.social-footer2 li a:hover {background-color:#ff8d1e;}
+ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
+.btn{background-color: #ff8d1e; color:#fff;}
+.btn:hover, .btn:focus, .btn.active {background: #4b92dc;color: #fff;
+-webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+-ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+-o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+-webkit-transition: all 250ms ease-in-out 0s;
+-moz-transition: all 250ms ease-in-out 0s;
+-ms-transition: all 250ms ease-in-out 0s;
+-o-transition: all 250ms ease-in-out 0s;
+transition: all 250ms ease-in-out 0s;
+}
+h1:#messageh1{
+  color: white;
+  text-align: center;
+}

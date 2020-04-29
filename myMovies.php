@@ -1,4 +1,5 @@
 <?php require("header.php") ?>
+
 <?php
 if (isset($_SESSION['userId'])) {
   require './includes/dbh.inc.php';
@@ -13,6 +14,7 @@ if (isset($_SESSION['userId'])) {
   }else {
     mysqli_stmt_bind_param($stmt, "s", $userId);
     mysqli_stmt_execute($stmt);
+    echo '<div class="mymovie">';
     $result = mysqli_stmt_get_result($stmt);
     while($row = $result->fetch_assoc()) {
               echo '<div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%; margin-top: 25px">
@@ -55,7 +57,7 @@ if (isset($_SESSION['userId'])) {
 ?>
 
 
-
+</div>
     </div>
   <?php include("footer.php") ?>
   <div>
