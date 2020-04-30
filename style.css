@@ -70,6 +70,11 @@ background-image: url("https://flaticons.net/icon.php?slug_category=application&
 * ==========================================
 *
 */
+img#moviePoster{
+  height: 360px;
+  width: 240px;
+}
+
 .navbar {
     transition: all 0.4s;
     position: sticky !important;

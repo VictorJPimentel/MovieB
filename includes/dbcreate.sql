@@ -4,6 +4,7 @@ USE `classic_theatre`;
 
 SET NAMES utf8;
 SET character_set_client = utf8mb4 ;
+
 CREATE TABLE `users` (
 	`userId` INT NOT NULL AUTO_INCREMENT,
 	`username` VARCHAR(255) NOT NULL,
@@ -11,7 +12,6 @@ CREATE TABLE `users` (
 	`email` VARCHAR(255) NOT NULL,
 	PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 
 CREATE TABLE `tickets` (
 	`ticketId` INT NOT NULL AUTO_INCREMENT,
@@ -27,24 +27,20 @@ CREATE TABLE `tickets` (
 CREATE TABLE `movies` (
 	`movieId` INT NOT NULL AUTO_INCREMENT,
 	`movieName` VARCHAR(255) NOT NULL,
-    `likes` INT,
-    `dislikes` INT,
 	PRIMARY KEY (`movieId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `movies` VALUES (NULL,'Aladdin',0,0);
-INSERT INTO `movies` VALUES (NULL,'Titanic',0,0);
-INSERT INTO `movies` VALUES (NULL,'Avatar',0,0);
-INSERT INTO `movies` VALUES (NULL,'Shawshank Redemption',0,0);
-INSERT INTO `movies` VALUES (NULL,'The Godfather',0,0);
+INSERT INTO `movies` VALUES (NULL,'Aladdin');
+INSERT INTO `movies` VALUES (NULL,'Titanic');
+INSERT INTO `movies` VALUES (NULL,'Avatar');
+INSERT INTO `movies` VALUES (NULL,'Shawshank Redemption');
+INSERT INTO `movies` VALUES (NULL,'The Godfather');
 
 CREATE TABLE `reviews` (
 	`reviewId` INT NOT NULL AUTO_INCREMENT,
-    `userId` INT NOT NULL,
-    `movieId` INT NOT NULL,
-	`reviewContent` VARCHAR(255) NOT NULL,
-    `likes` INT,
-    `dislikes` INT,
+	`movieId` INT NOT NULL,
+	`userId` INT NOT NULL,
+	`reviewText` TEXT NOT NULL,
 	PRIMARY KEY (`reviewId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -75,6 +71,27 @@ CREATE TABLE `messages` (
 	PRIMARY KEY (`messageId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `likes` (
+	`likeId` INT NOT NULL AUTO_INCREMENT,
+	`movieId` INT NOT NULL,
+	`userId` INT NOT NULL,
+	PRIMARY KEY (`likeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `dislikes` (
+	`dislikeId` INT NOT NULL AUTO_INCREMENT,
+	`movieId` INT NOT NULL,
+	`userId` INT NOT NULL,
+	PRIMARY KEY (`dislikeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `useful` (
+	`usefulId` INT NOT NULL AUTO_INCREMENT,
+	`reviewId` INT NOT NULL,
+	`userId` INT NOT NULL,
+	PRIMARY KEY (`usefulId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 ALTER TABLE `tickets` ADD CONSTRAINT `tickets_fk0` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
 
 ALTER TABLE `tickets` ADD CONSTRAINT `tickets_fk1` FOREIGN KEY (`orderId`) REFERENCES `orders`(`orderId`);
@@ -87,8 +104,18 @@ ALTER TABLE `items` ADD CONSTRAINT `items_fk1` FOREIGN KEY (`itemName`) REFERENC
 
 ALTER TABLE `messages` ADD CONSTRAINT `messages_fk0` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
 
-ALTER TABLE `reviews` ADD CONSTRAINT `reviews_fk0` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
+ALTER TABLE `reviews` ADD CONSTRAINT `reviews_fk0` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
 
-ALTER TABLE `reviews` ADD CONSTRAINT `reviews_fk1` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
+ALTER TABLE `reviews` ADD CONSTRAINT `reviews_fk1` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
 
+ALTER TABLE `likes` ADD CONSTRAINT `likes_fk0` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
 
+ALTER TABLE `likes` ADD CONSTRAINT `likes_fk1` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
+
+ALTER TABLE `dislikes` ADD CONSTRAINT `dislikes_fk0` FOREIGN KEY (`movieId`) REFERENCES `movies`(`movieId`);
+
+ALTER TABLE `dislikes` ADD CONSTRAINT `dislikes_fk1` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);
+
+ALTER TABLE `useful` ADD CONSTRAINT `useful_fk0` FOREIGN KEY (`reviewId`) REFERENCES `reviews`(`reviewId`);
+
+ALTER TABLE `useful` ADD CONSTRAINT `useful_fk1` FOREIGN KEY (`userId`) REFERENCES `users`(`userId`);

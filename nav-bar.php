@@ -7,7 +7,7 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="./index.php" class="nav-link text-uppercase font-weight-bold">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
+                <li class="nav-item"><a href="./about.php" class="nav-link text-uppercase font-weight-bold">About</a></li>
                 <?php if ( isset($_SESSION['userId']) ) {
                   echo'
                 <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Tickets</a></li>
