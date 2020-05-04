@@ -19,11 +19,10 @@
        while($row = $result->fetch_assoc()) {
                 $currentMovieId = $row["movieId"];
                 echo
-                 '<div class="container-login">
+                 '<div class="container-login" style="margin-bottom:15px;">
                    <form action="includes/like-dis.inc.php" method="post">
                        <div class="col">
                         <img id="moviePoster" src="images\poster_'.$currentMovieId.'.jpg" alt="">
-                         <span class="register-letter">'.$_SESSION['likes'][$currentMovieId].'</span>
                          <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>
                          <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>';
                   if($_SESSION["userLikes"][$currentMovieId]>=1){
@@ -59,6 +58,17 @@
                        echo'<p style="color:black; margin:5px 50px 5px;">'.$innerRow['reviewText'].'</p>';
                      }
                    }
+                   if($_SESSION['userReviews'][$currentMovieId]==0)echo '
+                   <form action="includes/review.inc.php" method="post">
+                        <span class="register-letter"><h6>Leave Review Here</h6></span>
+                         <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>
+                         <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>
+                         <textarea class="input-normal" rows="6"  name="reviewText" placeholder="Enter text here"></textarea>
+                         <input class="input-normal" type="submit" name="review-submit" value="Submit"></form>';
+
+
+
+
                    echo'</div>';
        }
    }
