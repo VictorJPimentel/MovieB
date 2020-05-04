@@ -1,8 +1,7 @@
 <?php require("header.php") ?>
-<div class="container-front">
-  <div class="front-text">
 
  <?php
+ echo '<table style="width: 400px; overflow: auto;">';
  if ( isset($_SESSION['userId']) ) {
      require './includes/dbh.inc.php';
      $userId= $_SESSION['userId'];
@@ -19,7 +18,7 @@
        while($row = $result->fetch_assoc()) {
                 $currentMovieId = $row["movieId"];
                 echo
-                 '<div class="container-login" style="margin-bottom:15px;">
+                 '<td><div class="container-login" style="margin-bottom:15px; ">
                    <form action="includes/like-dis.inc.php" method="post">
                        <div class="col">
                         <img id="moviePoster" src="images\poster_'.$currentMovieId.'.jpg" alt="">
@@ -70,16 +69,17 @@
 
 
                    echo'</div>';
+                   echo'</td>';
        }
    }
 
 
 
  }
+   
+   echo '</table>';
    ?>
 
-   </div>
-</div>
 </div>
 <?php include("footer.php") ?>
 <div>

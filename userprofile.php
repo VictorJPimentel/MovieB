@@ -14,12 +14,11 @@
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Name Lastname
+                                        <?php echo ''.$_SESSION['userUid'].''; ?>
                                     </h5>
                                     <h6>
-                                        Admin or Customer?
+                                        Customer
                                     </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
