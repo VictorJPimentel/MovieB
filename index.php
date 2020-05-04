@@ -1,5 +1,5 @@
     <?php require("header.php") ?>
-    <?php include("signup.php") ?>
+    <?php include("SlideShow.php") ?>
     </div>
     <?php include("footer.php") ?>
    <div>
