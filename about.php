@@ -10,7 +10,7 @@
      $stmt = mysqli_stmt_init($conn);
      buildLikes();
      if(!mysqli_stmt_prepare($stmt, $sql)){
-       header("Location: ../index.php?error=sqlerror");
+       header("Location: ../about.php?error=sqlerror");
        exit();
      }else {
        mysqli_stmt_execute($stmt);
@@ -25,13 +25,41 @@
                         <img id="moviePoster" src="images\poster_'.$currentMovieId.'.jpg" alt="">
                          <span class="register-letter">'.$_SESSION['likes'][$currentMovieId].'</span>
                          <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>
-                         <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>
-                         <input class="input-normal" type="submit" name="like-submit" value="Likes - '.$_SESSION['likes'][$currentMovieId].'">
-                         <input class="input-normal" type="submit" name="dislike-submit" value="Dislike">
+                         <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>';
+                  if($_SESSION["userLikes"][$currentMovieId]>=1){
+                           echo '
+                           <input class="input-normal" type="submit" name="like-submit" value="'.$_SESSION['likes'][$currentMovieId].' - Recommend" disabled>
+                           <input class="input-normal" type="submit" name="dislike-submit" value="'.$_SESSION['dislikes'][$currentMovieId].' - Don\'t Recommend">';
+                            }
+                   else if($_SESSION["userLikes"][$currentMovieId]==-1){
+                           echo '
+                           <input class="input-normal" type="submit" name="like-submit" value="'.$_SESSION['likes'][$currentMovieId].' - Recommend">
+                           <input class="input-normal" type="submit" name="dislike-submit" value="'.$_SESSION['dislikes'][$currentMovieId].' - Don\'t Recommend" disabled>';
+                         }
+                     else {
+                             echo '
+                             <input class="input-normal" type="submit" name="like-submit" value="'.$_SESSION['likes'][$currentMovieId].' - Recommend">
+                             <input class="input-normal" type="submit" name="dislike-submit" value="'.$_SESSION['dislikes'][$currentMovieId].' - Don\'t Recommend">';
+                    }
+                         echo'
                        </div>
-                   </form>
-                 </div>';
+                   </form>';
 
+                   $innerSql = "SELECT * FROM reviews WHERE movieId=?";
+                   $innerStmt = mysqli_stmt_init($conn);
+                   if(!mysqli_stmt_prepare($innerStmt, $innerSql)){
+                     header("Location: about.php?error=sqlerror");
+                     exit();
+                   }else {
+                     mysqli_stmt_bind_param($innerStmt, "s", $currentMovieId);
+                     mysqli_stmt_execute($innerStmt);
+                     $innerResult = mysqli_stmt_get_result($innerStmt);
+
+                     while($innerRow = $innerResult->fetch_assoc()) {
+                       echo'<p style="color:black; margin:5px 50px 5px;">'.$innerRow['reviewText'].'</p>';
+                     }
+                   }
+                   echo'</div>';
        }
    }
 

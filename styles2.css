@@ -3,3 +3,6 @@ img#moviePoster{
   width: 240px;
   text-align: center;
 }
+p#movieReview{
+  color: black;
+}
