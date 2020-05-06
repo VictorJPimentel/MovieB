@@ -14,8 +14,9 @@
      }else {
        mysqli_stmt_execute($stmt);
        $result = mysqli_stmt_get_result($stmt);
-
+   $add = 0;
        while($row = $result->fetch_assoc()) {
+        $add++;
                 $currentMovieId = $row["movieId"];
                 echo
                  '<td><div id="container-login" style="margin-bottom:15px; ">
@@ -58,7 +59,7 @@
                      }
                    }
                    if($_SESSION['userReviews'][$currentMovieId]==0)echo '
-                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">Review</button><div class="collapse" id="collapseExample">
+                     <input class="input-normal" type="submit" data-toggle="collapse" data-target="#collapseExample'.$add.'" aria-expanded="false" value="Review"><div class="collapse" id="collapseExample'.$add.'">
                      <div class="card card-body">
                    <form action="includes/review.inc.php" method="post">
                          <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>
