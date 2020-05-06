@@ -626,3 +626,6 @@ h1:#messageh1{
   text-align: center;
 }
 
+#myDIV {
+  display: none;
+}

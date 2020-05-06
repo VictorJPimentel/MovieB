@@ -1,5 +1,5 @@
 <?php require("header.php") ?>
-
+<?php  echo '<div class="container-front">';?>
  <?php
  echo '<table style="width: 400px; overflow: auto; class="about">';
  if ( isset($_SESSION['userId']) ) {
@@ -54,16 +54,20 @@
                      $innerResult = mysqli_stmt_get_result($innerStmt);
 
                      while($innerRow = $innerResult->fetch_assoc()) {
-                       echo'<p style="color:black; margin:5px 50px 5px;">'.$innerRow['reviewText'].'</p>';
+                       echo'<p style="color:black; margin:5px 50px 5px;">'.'<b>'.$_SESSION['userUid'].': </b>'.$innerRow['reviewText'].'</p>';
                      }
                    }
                    if($_SESSION['userReviews'][$currentMovieId]==0)echo '
+                     <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false">Review</button><div class="collapse" id="collapseExample">
+                     <div class="card card-body">
                    <form action="includes/review.inc.php" method="post">
-                        <span class="register-letter"><h6>Leave Review Here</h6></span>
                          <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>
                          <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>
-                         <textarea class="input-normal" rows="6"  name="reviewText" placeholder="Enter text here"></textarea>
-                         <input class="input-normal" type="submit" name="review-submit" value="Submit"></form>';
+                         <textarea class="input-normal" rows="6"  name="reviewText" placeholder="Leave Review Here"></textarea>
+                         <input class="input-normal" type="submit" name="review-submit" value="Submit">
+                    </form>
+                        </div>
+                         </div>';
 
 
 
@@ -75,9 +79,11 @@
 
 
 
+
  }
    
    echo '</table>';
+    echo'</div>';
    ?>
 
 </div>
