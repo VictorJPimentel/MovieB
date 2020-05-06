@@ -25,21 +25,30 @@ if (isset($_POST['search-submit'])) {
     //   }
     //header("Location: ticketing.php");
     //exit();
+    unset($_SESSION['num_ticks']);
     $numAvaiable =  10 - mysqli_num_rows ( $result );
+    $_SESSION['num_available']=$numAvaiable;
+    $_SESSION['date'] = $date;
+    $_SESSION['time'] = $time;
+    $_SESSION['movieId'] = $movieId;
     $conn->close();
    }
+}
+
+if (isset($_POST['num-submit'])) {
+  $num_ticks=$_POST['num_ticks'];
+  $_SESSION['num_ticks']=$num_ticks;
+
 }
 
 if (isset($_POST['purchase-submit'])) {
   require 'dbh.inc.php';
     $movieId = $_POST['movieId'];
-
     $date = $_POST['date'];
     $time = $_POST['time'];
     $num_ticks = $_POST['num_ticks'];
     $newOrderId = "";
-    $price =5.00;
-    $type= "Elderly";
+
     $sql= "INSERT INTO orders( userId) VALUES (?)";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -60,10 +69,27 @@ if (isset($_POST['purchase-submit'])) {
         header("Location: ./ticketing.php?error=sqlerrormakingtickets");
         exit();
       }else {
-        mysqli_stmt_bind_param($stmt, "ssssss", $movieId, $newOrderId, $date, $time, $type, $price );
+
         for ($i=0; $i < $num_ticks; $i++) {
+          $type= $_POST['type'.$i];
+          if($type=='Adult')
+              $price=5.00;
+            else if($type == 'Child')
+              $price=2.00;
+            else if($type == 'Senior')
+              $price=4.00;
+            else if($type == 'Student')
+              $price=3.00;
+
+          mysqli_stmt_bind_param($stmt, "ssssss", $movieId, $newOrderId, $date, $time, $type, $price );
           mysqli_stmt_execute($stmt);
         }
+
+        unset($_SESSION['num_ticks']);
+        unset($_SESSION['num_available']);
+        unset($_SESSION['date']);
+        unset($_SESSION['time']);
+        unset($_SESSION['movieId']);
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
         header("Location: ./myMovies.php?purchase=success");

@@ -16,6 +16,8 @@ if (isset($_SESSION['userId'])) {
     mysqli_stmt_execute($stmt);
     echo '<div class="mymovie">';
     $result = mysqli_stmt_get_result($stmt);
+    $totalTicks=0;
+    $orderTotal = 0;
     while($row = $result->fetch_assoc()) {
               echo '<div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%; margin-top: 25px">
                   <tr><th class="cell colum1">ticket #</th>
@@ -46,7 +48,7 @@ if (isset($_SESSION['userId'])) {
                     <td class='cell'>".$innerRow["movieDate"]."</td>
                     <td class='cell'>".$innerRow["movieTime"]."</td>
                     <td class='cell'>".$innerRow["type"]."</td>
-                    <td class='cell'>".$innerRow["price"]."</td>
+                    <td class='cell'>$".$innerRow["price"].".00</td>
                     <tr>";
                 }
               }
