@@ -1,5 +1,5 @@
 <?php require("header.php") ?>
-
+<?php  echo '<div class="scroly table-wrapper-scroll-y my-custom-scrollbar">'; ?>
 <?php
 if (isset($_SESSION['userId'])) {
   require './includes/dbh.inc.php';
@@ -56,7 +56,7 @@ if (isset($_SESSION['userId'])) {
 }
 ?>
 
-
+</div>
 </div>
     </div>
   <?php include("footer.php") ?>

@@ -1,7 +1,7 @@
 <?php require("header.php") ?>
 
  <?php
- echo '<table style="width: 400px; overflow: auto;">';
+ echo '<table style="width: 400px; overflow: auto; class="about">';
  if ( isset($_SESSION['userId']) ) {
      require './includes/dbh.inc.php';
      $userId= $_SESSION['userId'];
@@ -18,7 +18,7 @@
        while($row = $result->fetch_assoc()) {
                 $currentMovieId = $row["movieId"];
                 echo
-                 '<td><div class="container-login" style="margin-bottom:15px; ">
+                 '<td><div id="container-login" style="margin-bottom:15px; ">
                    <form action="includes/like-dis.inc.php" method="post">
                        <div class="col">
                         <img id="moviePoster" src="images\poster_'.$currentMovieId.'.jpg" alt="">
