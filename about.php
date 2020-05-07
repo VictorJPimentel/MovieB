@@ -78,10 +78,54 @@
                     </form>
                         </div>
                          </div>';
-
-
-
-
+                   echo'</div>';
+                   echo'</td>';
+       }
+   }
+ }else{
+     require './includes/dbh.inc.php';
+     $sql = "SELECT * FROM movies";
+     $stmt = mysqli_stmt_init($conn);
+     buildLikes();
+     if(!mysqli_stmt_prepare($stmt, $sql)){
+       header("Location: ../about.php?error=sqlerror");
+       exit();
+     }else {
+       mysqli_stmt_execute($stmt);
+       $result = mysqli_stmt_get_result($stmt);
+       $add = 0;
+       while($row = $result->fetch_assoc()) {
+        $add++;
+                $currentMovieId = $row["movieId"];
+                echo
+                 '<td><div id="container-login" style="margin-bottom:15px; ">
+                       <div class="col">
+                        <img id="moviePoster" src="images\poster_'.$currentMovieId.'.jpg" alt="">
+                         <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>
+                         <input class="input-normal" type="submit" name="like-submit" value="'.$_SESSION['likes'][$currentMovieId].' - Recommend" diabled>
+                         <input class="input-normal" type="submit" name="dislike-submit" value="'.$_SESSION['dislikes'][$currentMovieId].' - Don\'t Recommend" disabled>
+                       </div>
+                   ';
+                   $innerSql = "SELECT * FROM reviews WHERE movieId=?";
+                   $innerStmt = mysqli_stmt_init($conn);
+                   if(!mysqli_stmt_prepare($innerStmt, $innerSql)){
+                     header("Location: about.php?error=sqlerror");
+                     exit();
+                   }else {
+                     mysqli_stmt_bind_param($innerStmt, "s", $currentMovieId);
+                     mysqli_stmt_execute($innerStmt);
+                     $innerResult = mysqli_stmt_get_result($innerStmt);
+                     while($innerRow = $innerResult->fetch_assoc()) {
+                       $thirdSql = "SELECT username FROM users WHERE userid = ?";
+                       $thirdStmt = mysqli_stmt_init($conn);
+                       mysqli_stmt_prepare($thirdStmt, $thirdSql);
+                       mysqli_stmt_bind_param($thirdStmt, "s", $innerRow['userId']);
+                       mysqli_stmt_execute($thirdStmt);
+                       $thirdResult = mysqli_stmt_get_result($thirdStmt);
+                       $thirdRow = $thirdResult->fetch_assoc();
+                       echo'<p style="color:black; margin:5px 50px 5px;">'.'<b>'.$thirdRow['username'].': </b>'.$innerRow['reviewText'].'</p>';
+                     }
+                   }
                    echo'</div>';
                    echo'</td>';
        }

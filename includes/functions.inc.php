@@ -13,9 +13,6 @@ function pickMovie($id){
   }
   return $pickName;
 }
-function addLike($id){
-
-}
 
 function buildLikes(){
   $likes=array(1=>0, 2=>0, 3=>0,4=>0,5=>0, );
@@ -33,7 +30,7 @@ function buildLikes(){
       $result = mysqli_stmt_get_result($stmt);
       while($row = $result->fetch_assoc()) {
                $likes[$row["movieId"]]+=1;
-               if($row['userId']==$_SESSION['userId']){
+               if(isset($_SESSION['userId']) && $row['userId']==$_SESSION['userId']){
                  $userLikes[$row["movieId"]]+=1;
                }
       }
@@ -49,12 +46,11 @@ function buildLikes(){
       $result = mysqli_stmt_get_result($stmt);
       while($row = $result->fetch_assoc()) {
                $dislikes[$row["movieId"]]+=1;
-               if($row['userId']==$_SESSION['userId']){
+               if(isset($_SESSION['userId'])&&$row['userId']==$_SESSION['userId']){
                  $userLikes[$row["movieId"]]-=1;
                }
       }
     }
-
     $sql = "SELECT * FROM reviews";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -65,7 +61,7 @@ function buildLikes(){
       $result = mysqli_stmt_get_result($stmt);
       while($row = $result->fetch_assoc()) {
                $dislikes[$row["movieId"]]+=1;
-               if($row['userId']==$_SESSION['userId']){
+               if(isset($_SESSION['userId']) &&$row['userId']==$_SESSION['userId']){
                  $userReviews[$row["movieId"]]=1;
                }
       }
