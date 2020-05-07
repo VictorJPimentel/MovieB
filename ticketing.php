@@ -5,6 +5,12 @@
 if(isset($_SESSION['num_available'])){
 
 if (!isset($_SESSION['num_ticks'])) {
+  
+  $numAvaiable = $_SESSION['num_available'];
+  $date = $_SESSION['date'];
+  $time = $_SESSION['time'];
+  $movieId = $_SESSION['movieId'];
+  $movieName=pickMovie($movieId);
 echo
 '<div class="container-front">
  <div class="container-login">

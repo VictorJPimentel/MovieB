@@ -55,7 +55,16 @@
                      $innerResult = mysqli_stmt_get_result($innerStmt);
 
                      while($innerRow = $innerResult->fetch_assoc()) {
-                       echo'<p style="color:black; margin:5px 50px 5px;">'.'<b>'.$_SESSION['userUid'].': </b>'.$innerRow['reviewText'].'</p>';
+
+                       $thirdSql = "SELECT username FROM users WHERE userid = ?";
+                       $thirdStmt = mysqli_stmt_init($conn);
+                       mysqli_stmt_prepare($thirdStmt, $thirdSql);
+                       mysqli_stmt_bind_param($thirdStmt, "s", $innerRow['userId']);
+                       mysqli_stmt_execute($thirdStmt);
+                       $thirdResult = mysqli_stmt_get_result($thirdStmt);
+                       $thirdRow = $thirdResult->fetch_assoc();
+
+                       echo'<p style="color:black; margin:5px 50px 5px;">'.'<b>'.$thirdRow['username'].': </b>'.$innerRow['reviewText'].'</p>';
                      }
                    }
                    if($_SESSION['userReviews'][$currentMovieId]==0)echo '
@@ -82,7 +91,7 @@
 
 
  }
-   
+
    echo '</table>';
     echo'</div>';
    ?>
