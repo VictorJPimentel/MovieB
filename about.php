@@ -14,7 +14,7 @@
      }else {
        mysqli_stmt_execute($stmt);
        $result = mysqli_stmt_get_result($stmt);
-   $add = 0;
+   $add = 0;echo '<div class="mymovie">';
        while($row = $result->fetch_assoc()) {
         $add++;
                 $currentMovieId = $row["movieId"];
@@ -82,7 +82,7 @@
 
 
 
-                   echo'</div>';
+                   echo'</div></div>';
                    echo'</td>';
        }
    }
