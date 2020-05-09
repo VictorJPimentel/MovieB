@@ -15,7 +15,7 @@ echo
          <input class="input-normal" type="text" name="uid" placeholder="Username" required>
          <span class="register-letter">Password</span>
          <input class="input-normal" type="password" name="pwd" placeholder="Password" required>
-         <span class="register-letter">Password</span>
+         <span class="register-letter">Repeat Password</span>
          <input class="input-normal" type="password" name="pwd-repeat" placeholder="Repeat Password" required>
          <input class="input-normal" type="submit" name="signup-submit" value="Sign Up">
        </div>

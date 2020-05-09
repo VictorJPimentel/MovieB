@@ -9,6 +9,7 @@ body *::-webkit-scrollbar-thumb {background-color: #771F2D; border-radius: 5px}
 
  {-webkit-appearance: none; width: 6px}
 
+
 .background {
   background-color: #ddd;
   width: 100%;
@@ -193,8 +194,7 @@ background-image: url("https://img.icons8.com/cotton/2x/menu.png");
 }
 
 #container-login {
-  max-height: 600px;
-  width: 300px !important; 
+  width: 300px !important;
   background-color: #f2f2f2;
   padding: 20px 0 30px 0;
   border-radius: 7px;
@@ -625,8 +625,4 @@ transition: all 250ms ease-in-out 0s;
 h1:#messageh1{
   color: white;
   text-align: center;
-}
-
-#myDIV {
-  display: none;
 }
