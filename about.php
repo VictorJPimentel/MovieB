@@ -68,7 +68,7 @@
                      }
                    }
                    if($_SESSION['userReviews'][$currentMovieId]==0)echo '
-                     <input class="input-normal" type="submit" data-toggle="collapse" data-target="#collapseExample'.$add.'" aria-expanded="false" value="Review"><div class="collapse" id="collapseExample'.$add.'">
+                     <input class="input-normal reviewoption" type="submit" data-toggle="collapse" data-target="#collapseExample'.$add.'" aria-expanded="false" value="Review"><div class="collapse" id="collapseExample'.$add.'">
                      <div class="card card-body">
                    <form action="includes/review.inc.php" method="post">
                          <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>

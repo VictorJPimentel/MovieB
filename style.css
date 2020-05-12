@@ -1,6 +1,9 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+#embedded{
+  color:white;
+}
 
 body *::-webkit-scrollbar {-webkit-appearance: none; width: 6px}
 body *::-webkit-scrollbar-track-piece {background-color: transparent}
@@ -80,6 +83,7 @@ background-image: url("https://flaticons.net/icon.php?slug_category=application&
 img#moviePoster{
   height: 360px;
   width: 240px;
+  margin-right: -10px;
 }
 
 .navbar {
@@ -193,11 +197,13 @@ background-image: url("https://img.icons8.com/cotton/2x/menu.png");
 }
 
 #container-login {
-  max-height: 600px;
+  height: 750px;
   width: 300px !important;
   background-color: #f2f2f2;
   padding: 20px 0 30px 0;
   border-radius: 7px;
+  position:relative;
+  margin: 5px;
 }
 
 
@@ -240,11 +246,15 @@ input[type=submit]:hover {
 }
 
 .col {
-
   width: 100%;
   margin: auto;
-  padding: 0 50px;
+  padding: 0 30px;
   margin-top: 6px;
+}
+input[type=submit].reviewoption{
+position: absolute;
+bottom: 0;
+
 }
 
 /* Two-column layout */
@@ -630,4 +640,7 @@ h1:#messageh1{
 
 #myDIV {
   display: none;
+}
+th#resolveIt{
+  text-align: center;
 }

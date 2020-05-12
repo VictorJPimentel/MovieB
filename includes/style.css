@@ -219,12 +219,10 @@ background-image: url("https://img.icons8.com/cotton/2x/menu.png");
 .put-down {margin-top: -50px !important; }
 
 .register-letter {
-
   font-weight: bold;
   display: inline-block;
   font-size: 12px;
   line-height: 20px;
-
 }
 
 
@@ -240,10 +238,9 @@ input[type=submit]:hover {
 }
 
 .col {
-
   width: 100%;
   margin: auto;
-  padding: 0 50px;
+  padding: 0 30px;
   margin-top: 6px;
 }
 

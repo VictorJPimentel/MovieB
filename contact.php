@@ -34,13 +34,13 @@ echo
      if($row_cnt){
      echo '<h1 style=" text-align: center; color:white; margin-top: 25px; margin-bottom: 25px">Your pending messages</h1>';
      echo '<div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" >
-         <tr><th class="cell colum1" id="message#">Message #</th>
-           <th class="cell colum2" id="messageCon" >Message Content</th>
-           <th class="cell colum3" id="resolveIt" >Resolve Message?</th>
+         <tr>
+           <th class="cell colum3" id="messageCon" >Message Content</th>
+           <th class="cell colum5" id="resolveIt" >Resolve Message?</th>
          </tr>';
      while($row = $result->fetch_assoc()) {
 
-          echo '<tr><td class="cell">'.$row['messageId'].'</td><td class="cell">'.$row['message'].'</td><td>
+          echo '<tr><td class="cell">'.$row['message'].'</td><td>
                 <form action="includes/resolve.inc.php" method="post">
                 <input type="hidden" name="messageId" value="'.$row['messageId'].'" readonly>
                 <input class="input-normal" type="submit" name="resolve-submit" value="Resolve">
