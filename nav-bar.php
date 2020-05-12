@@ -8,7 +8,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="./index.php" class="nav-link text-uppercase font-weight-bold">Home</a></li>
                 <li class="nav-item"><a href="./about.php" class="nav-link text-uppercase font-weight-bold">Now Showing</a></li>
-                <?php if ( isset($_SESSION['userId']) ) {
+              <?php if ( isset($_SESSION['userId']) ) {
                   echo'
                 <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Ticketing</a></li>
                 <li class="nav-item"><a href="./myMovies.php" class="nav-link text-uppercase font-weight-bold">My Movies</a></li>
@@ -21,6 +21,14 @@
           <input type="password" class="form-control login-nav-in" name="pwd" placeholder="Password" required>
         <input type="submit" class="btn" name="login-submit" value="Sign In">
         </form></li>';
+       if (isset($_GET['error'])) {
+          if ($_GET['error']=="wrongpwdbro") {
+            echo '<li class="nav-item"><a class="nav-link text-uppercase font-weight-bold" style="color:black; text-decoration: underline;">Password does not match username</a></li>';
+          }else if ($_GET['error']=="nouser") {
+            echo '<li class="nav-item"><a class="nav-link text-uppercase font-weight-bold" style="color:black; text-decoration: underline;">User Does not Exist</a></li>';
+          }
+        }
+        
       }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
                         <input type="submit" class="btn" name="login-submit" value="Logout">

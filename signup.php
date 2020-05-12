@@ -8,8 +8,27 @@
 echo
  '<div class="container-login">
    <form action="includes/signup.inc.php" method="post">
-       <div class="col">
-         <span class="register-letter">Email</span>
+       <div class="col">';
+
+        if (isset($_GET['error'])) {
+        if ($_GET['error']=="emptyfields") {
+          echo '<span class="register-letter" style="font-size:36px">Fill in all fields!</span>';
+        }else if ($_GET['error']=="invalidmailuid") {
+          echo '<span class="register-letter" style="font-size:26px">Invalid username and e-mail!</span>';
+        }else if ($_GET['error']=="invaliduid") {
+          echo '<span class="register-letter" style="font-size:36px">Invalid username</span>';
+        }else if ($_GET['error']=="invalidmail") {
+          echo '<span class="register-letter" style="font-size:36px">Invalid E-mail</span>';
+        }else if ($_GET['error']=="passwordcheck") {
+          echo '<span class="register-letter" style="font-size:36px">Passwords must match</span>';
+        }else if ($_GET['error']=="usertaken") {
+          echo '<span class="register-letter" style="font-size:36px">Username taken</span>';
+        }
+        echo '<br>';
+      }
+
+
+        echo' <span class="register-letter">Email</span>
          <input class="input-normal" type="text" name="mail"  placeholder="example@example.eg" required>
          <span class="register-letter">Username</span>
          <input class="input-normal" type="text" name="uid" placeholder="Username" required>
