@@ -53,7 +53,7 @@
                      mysqli_stmt_bind_param($innerStmt, "s", $currentMovieId);
                      mysqli_stmt_execute($innerStmt);
                      $innerResult = mysqli_stmt_get_result($innerStmt);
-
+                     echo'<div class="container-table table-wrapper-scroll-y my-custom-scrollbar reviewscroll"><table class="table table-striped mb-0">';
                      while($innerRow = $innerResult->fetch_assoc()) {
 
                        $thirdSql = "SELECT username FROM users WHERE userid = ?";
@@ -64,8 +64,10 @@
                        $thirdResult = mysqli_stmt_get_result($thirdStmt);
                        $thirdRow = $thirdResult->fetch_assoc();
 
-                       echo'<p style="color:black; margin:5px 50px 5px;">'.'<b>'.$thirdRow['username'].': </b>'.$innerRow['reviewText'].'</p>';
+                       echo'<p style="color:black; margin:5px 15px 5px;">'.'<b>'.$thirdRow['username'].': </b>'.$innerRow['reviewText'].'</p>';
+
                      }
+                     echo'</table></div>';
                    }
                    if($_SESSION['userReviews'][$currentMovieId]==0)echo '
                      <input class="input-normal reviewoption" type="submit" data-toggle="collapse" data-target="#collapseExample'.$add.'" aria-expanded="false" value="Review"><div class="collapse" id="collapseExample'.$add.'">

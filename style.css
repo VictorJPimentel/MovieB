@@ -254,6 +254,9 @@ input[type=submit]:hover {
 input[type=submit].reviewoption{
 position: absolute;
 bottom: 0;
+left: 0;
+margin-left: 10%;
+width: 80%;
 
 }
 
@@ -358,9 +361,9 @@ height: 50px;
   float:left;
   justify-content: center;
   overflow:auto;
-  width: 85%;
+  width: 80%;
   margin: auto;
-  margin-left: 7.5%;
+  margin-left: 10%;
   margin-bottom: 50px;
   background-color: #f2f2f2;
   border-radius: 10px;
@@ -384,7 +387,7 @@ height: auto;
 max-height: 400px;
 }
 .table-wrapper-scroll-y::-webkit-scrollbar {
-  width: 0;
+  width: 2px;
 }
 
 .table-wrapper-scroll-y::-webkit-scrollbar-track {
@@ -396,9 +399,15 @@ max-height: 400px;
   outline: 1px solid slategrey;
 }
 
+.reviewscroll{
+  height: 200px;
+}
+
 .mymovies {height: 700px; overflow:auto;}
 
 .scroly {max-height: 80vh; overflow: auto;}
+
+
 /*====================
   Sigin
 ====================== */
