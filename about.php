@@ -53,6 +53,7 @@
                      mysqli_stmt_bind_param($innerStmt, "s", $currentMovieId);
                      mysqli_stmt_execute($innerStmt);
                      $innerResult = mysqli_stmt_get_result($innerStmt);
+                     if($innerResult->num_rows>0){
                      echo'<div class="container-table table-wrapper-scroll-y my-custom-scrollbar reviewscroll"><table class="table table-striped mb-0">';
                      while($innerRow = $innerResult->fetch_assoc()) {
 
@@ -68,6 +69,16 @@
 
                      }
                      echo'</table></div>';
+                   }else {
+                     echo'<div class="container-table table-wrapper-scroll-y my-custom-scrollbar reviewscroll"><table class="table table-striped mb-0">';
+
+
+                       echo'<p style="color:black; margin:5px 15px 5px;">'.'<b>Click below to leave the first review.<b></p>';
+
+
+                     echo'</table></div>';
+                     // code...
+                   }
                    }
                    if($_SESSION['userReviews'][$currentMovieId]==0)echo '
                      <input class="input-normal reviewoption" type="submit" data-toggle="collapse" data-target="#collapseExample'.$add.'" aria-expanded="false" value="Review"><div class="collapse" id="collapseExample'.$add.'">

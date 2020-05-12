@@ -5,7 +5,7 @@ if (isset($_SESSION['userId'])) {
   require './includes/dbh.inc.php';
   $userId= $_SESSION['userId'];
   $movieName="";
-  echo '<h1 style=" text-align: center; color:white; margin-top: 25px;  margin-bottom: 25px">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
+
   $sql = "SELECT * FROM orders WHERE userId=?";
   $stmt = mysqli_stmt_init($conn);
   if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -14,10 +14,16 @@ if (isset($_SESSION['userId'])) {
   }else {
     mysqli_stmt_bind_param($stmt, "s", $userId);
     mysqli_stmt_execute($stmt);
+
     echo '<div class="mymovie">';
     $result = mysqli_stmt_get_result($stmt);
     $totalTicks=0;
     $orderTotal = 0;
+    if($result->num_rows!=0){
+      echo '<h1 style=" text-align: center; color:white; margin-top: 25px;  margin-bottom: 25px">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
+    }else
+      echo '<h1 style=" text-align: center; color:white; margin-top: 25px;  margin-bottom: 25px">We dont have any movie tickets reserved for '.$_SESSION['userUid'].' <br>Click <a id="embedded" href="./ticketing.php">ticketing</a> to purchase tickets.</h1>';
+      echo '<img src="./images/sad-face.png" alt="sad-face" style="background-color:transparent; background:transparent; margin-left:30%; width:40%; height:40%;"/>';
     while($row = $result->fetch_assoc()) {
               echo '<div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%; margin-top: 25px">
                   <tr><th class="cell colum1">ticket #</th>

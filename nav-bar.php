@@ -10,7 +10,7 @@
                 <li class="nav-item"><a href="./about.php" class="nav-link text-uppercase font-weight-bold">Now Showing</a></li>
                 <?php if ( isset($_SESSION['userId']) ) {
                   echo'
-                <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Tickets</a></li>
+                <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Ticketing</a></li>
                 <li class="nav-item"><a href="./myMovies.php" class="nav-link text-uppercase font-weight-bold">My Movies</a></li>
                 <li class="nav-item"><a href="./contact.php" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
                 <li class="nav-item"><a href="./temporary.php" class="nav-link text-uppercase font-weight-bold">temporal</a></li>';
