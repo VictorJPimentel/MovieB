@@ -1,5 +1,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  position: relative;
 }
 #embedded{
   color:white;
@@ -33,7 +34,8 @@ position: absolute;
 
 .background-1 {
   background: lightblue url("https://www.gannett-cdn.com/presto/2019/04/02/PLOU/febba588-ff5b-4277-b600-c4c76252c317-MotleyFool-TMOT-1c387926-06ba00e6.jpg?crop=2094,1185,x0,y0&width=1600&height=800&fit=bounds");
-background-repeat: round;
+background-repeat: no-repeat;
+background-size: cover;
 }
 
 
@@ -64,8 +66,8 @@ height: 15px;
 .log-icon {
 background-image: url("https://flaticons.net/icon.php?slug_category=application&slug_icon=login-arrow");
 width: 20px;
-height: 20px;
 
+height: 20px;
 }
 
 .user-icon {
@@ -652,4 +654,7 @@ h1:#messageh1{
 }
 th#resolveIt{
   text-align: center;
+}
+.card{
+  z-index: 5;
 }
