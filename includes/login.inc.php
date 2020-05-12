@@ -26,9 +26,13 @@ if ( isset($_POST['login-submit']) ){
           session_start();
           $_SESSION['userId'] = $row['userId'];
           $_SESSION['userUid'] = $row['username'];
-
-          header("Location: ../index.php?login=success");
-          exit();
+          if($_SESSION['userId']==1){
+            header("Location: ../contact.php?login=success");
+            exit();
+          }else{
+            header("Location: ../index.php?login=success");
+            exit();
+        }
         }else {
           header("Location: ../index.php?error=wrongpwd");
           exit();
