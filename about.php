@@ -72,9 +72,7 @@
                    }else {
                      echo'<div class="container-table table-wrapper-scroll-y my-custom-scrollbar reviewscroll"><table class="table table-striped mb-0">';
 
-
-                       echo'<p style="color:black; margin:5px 15px 5px;">'.'<b>Click below to leave the first review.<b></p>';
-
+                       echo'<p style="color:black; margin:5px 15px 5px;">'.'<b>Click below to leave the first review.</b></p>';
 
                      echo'</table></div>';
                      // code...
@@ -86,7 +84,7 @@
                    <form action="includes/review.inc.php" method="post">
                          <input type="hidden" name="userId" value="'.$_SESSION['userId'].'" readonly>
                          <input type="hidden" name="movieId" value="'.$currentMovieId.'" readonly>
-                         <textarea class="input-normal" rows="6"  name="reviewText" placeholder="Leave Review Here"></textarea>
+                         <textarea class="input-normal" rows="6"  name="reviewText" placeholder="Leave Review Here" required></textarea>
                          <input class="input-normal" type="submit" name="review-submit" value="Submit">
                     </form>
                         </div>

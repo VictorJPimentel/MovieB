@@ -12,8 +12,8 @@
                   echo'
                 <li class="nav-item"><a href="./ticketing.php" class="nav-link text-uppercase font-weight-bold">Ticketing</a></li>
                 <li class="nav-item"><a href="./myMovies.php" class="nav-link text-uppercase font-weight-bold">My Movies</a></li>
-                <li class="nav-item"><a href="./contact.php" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
-                <li class="nav-item"><a href="./temporary.php" class="nav-link text-uppercase font-weight-bold">temporal</a></li>';
+                <li class="nav-item"><a href="./contact.php" class="nav-link text-uppercase font-weight-bold">Contact</a></li>';
+                // echo '<li class="nav-item"><a href="./temporary.php" class="nav-link text-uppercase font-weight-bold">temporal</a></li>';
               }
       if ( !isset($_SESSION['userId']) ) {
         echo '<li class="nav-item"><form class="form-inline" action="includes/login.inc.php" method="post">
@@ -24,8 +24,8 @@
       }else if ( isset($_SESSION['userId']) ) {
                   echo '<li class="nav-item"><form action="includes/logout.inc.php" method="post">
                         <input type="submit" class="btn" name="login-submit" value="Logout">
-                        </form></li>
-                        <li class="nav-item"><a href="./userprofile.php" class="nav-link text-uppercase font-weight-bold">Profile</a></li>';
+                        </form></li>';
+                        // echo'<li class="nav-item"><a href="./userprofile.php" class="nav-link text-uppercase font-weight-bold">Profile</a></li>';
       }
       ?>
             </ul>
