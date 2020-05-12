@@ -21,9 +21,10 @@ if (isset($_SESSION['userId'])) {
     $orderTotal = 0;
     if($result->num_rows!=0){
       echo '<h1 style=" text-align: center; color:white; margin-top: 25px;  margin-bottom: 25px">We have these movie tickets reserved for you '.$_SESSION['userUid'].'</h1>';
-    }else
+    }else{
       echo '<h1 style=" text-align: center; color:white; margin-top: 45px;  margin-bottom: 25px">We dont have any movie tickets reserved for '.$_SESSION['userUid'].' <br>Click <a id="embedded" href="./ticketing.php">ticketing</a> to purchase tickets.</h1>';
       echo '<img src="./images/sad-face.png" alt="sad-face" style="background-color:transparent; background:transparent; margin-left:30%; width:40%; height:40%;"/>';
+    }
     while($row = $result->fetch_assoc()) {
               echo '<div class="container-table table-wrapper-scroll-y my-custom-scrollbar"><table class="table table-striped mb-0" class="width:50%; margin-top: 25px">
                   <tr><th class="cell colum1">ticket #</th>

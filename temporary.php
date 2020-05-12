@@ -27,9 +27,9 @@
     </div>
     <div class="carousel-item">
       <img class="d-block w-25" src="https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg" alt="Third slide">
-	
+
 	</div>
-	
+
     <div class="carousel-item">
       <img class="d-block w-25" src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg" alt="Fift slide">
     </div>
@@ -50,4 +50,4 @@
 
 </body>
 
-</html> 
+</html>
